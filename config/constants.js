@@ -1,5 +1,47 @@
 import Log, { log } from "..";
 
+export const $Config = {
+  styles: {
+    general: `
+      font-family: system-ui;
+      padding: 2px; 
+      font-size: 13; 
+      border-radius: 2px; 
+      font-weight: 600; 
+      letter-spacing: 2px; 
+      border: 1px dotted;
+    `
+  },
+  debug: true
+}
+
+export const $Icons = {
+  warn: '►',
+  success: '►',
+  error: '►',
+  dark: '►',
+  light: '►',
+  info: '►'
+}
+
+export const $Types = {
+  warn: 'warn',
+  error: 'error',
+  success: 'success',
+  dark: 'dark',
+  light: 'light',
+  info: 'info'
+}
+
+export const $Styles = {
+  warn: $Config.styles.general  + 'color: black; background: #FFA600; border-color: orange;',
+  error: $Config.styles.general + 'color: #C70039; background: #ffcccc; border-color: #ffcccc;',
+  success: $Config.styles.general + 'color: #008000; background: #b2d8b2; border-color: #b2d8b2;',
+  dark: $Config.styles.general + 'background: #353535; color: #e5e5e5; border-style: solid; border-width: 0px;',
+  light: $Config.styles.general + 'background: white; color: #353535; border-color: #353535',
+  info: $Config.styles.general + 'background: #0080ff; color: #e5f2ff; border-color: #0080ff;',
+}
+
 export const $Errors = {
   ID_NOT_UNIQUE: {
     KEY: 'ID_NOT_UNIQUE',
@@ -65,40 +107,6 @@ export const $Logger = async (type, config, ...args) => {
   }
   else title = ' ' + icon + ' ';
   console.log('%c%s', style, title, ...args);
-}
-
-export const $Styles = {
-  warn: $Config.styles.general  + 'color: black; background: #FFA600; border-color: orange;',
-  error: $Config.styles.general + 'color: #C70039; background: #ffcccc; border-color: #ffcccc;',
-  success: $Config.styles.general + 'color: #008000; background: #b2d8b2; border-color: #b2d8b2;',
-  dark: $Config.styles.general + 'background: #353535; color: #e5e5e5; border-style: solid; border-width: 0px;',
-  light: $Config.styles.general + 'background: white; color: #353535; border-color: #353535',
-  info: $Config.styles.general + 'background: #0080ff; color: #e5f2ff; border-color: #0080ff;',
-}
-
-export const $Icons = {
-  warn: '►',
-  success: '►',
-  error: '►',
-  dark: '►',
-  light: '►',
-  info: '►'
-}
-
-export const $Types = {
-  warn: 'warn',
-  error: 'error',
-  success: 'success',
-  dark: 'dark',
-  light: 'light',
-  info: 'info'
-}
-
-export const $Config = {
-  styles: {
-    general: 'font-family: system-ui;padding: 2px; font-size: 13; border-radius: 2px; font-weight: 600; letter-spacing: 2px; border: 1px dotted;'
-  },
-  debug: true
 }
 
 export const $Utils = {
