@@ -4,7 +4,7 @@
     "name": "Nikita Zhigamovsky",
     "email": "zhigamovsky@gmail.com"
   },
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Customized console log with your own styles",
   "license": "MIT",
   "repository": "Zhigamovsky/styled-console-log",
