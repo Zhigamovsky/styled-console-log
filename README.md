@@ -5,8 +5,7 @@
 ## Usage
 
 ```javascript
-import { Log, log, $Types } from '@zhigamovsky/styled-console-log' 
-import { $Animations } from '@zhigamovsky/styled-console-log/gifs'
+import Log, { log, Types } from '@zhigamovsky/styled-console-log' 
 
 ...
     // dummy variables for testing :)
@@ -15,26 +14,26 @@ import { $Animations } from '@zhigamovsky/styled-console-log/gifs'
     let dummy = { a, b: ['value', 'value', 'value'], c, d: 'asdasdsad', l: { } };
     
     // Log (uppercase) - is default log, without configuration,  but with styles
-    Log.error('ERROR', c, a, dummy); 
-    Log.warn('WARNING', c, a, dummy);
-    Log.success('SUCCESS', c, a, dummy);
-    Log.dark('DARK', c, a, dummy);
-    Log.light('LIGHT', c, a, dummy);
-    Log.info('INFORMATION', c, a, dummy);
+    Log.error('Oh, god damn!', c, a, dummy); 
+    Log.warn('Warn you about a warning!', c, a, dummy);
+    Log.success('Got it!', c, a, dummy);
+    Log.dark('Devil within, boo-ga-ga', c, a, dummy);
+    Log.light('Angel within', c, a, dummy);
+    Log.info('Lorem ipsum dolor... As trivially as this message', c, a, dummy);
     
     // log (lowercase) - is log, with configuration, but it's under developing
-    log.error('ERROR', c, a, dummy)();
-    log.warn('WARNING', c, a, dummy)();
-    log.success('SUCCESS', c, a, dummy)();
-    log.dark('DARK', c, a, dummy)();
-    log.light('LIGHT', c, a, dummy)();
-    log.info('INFORMATION', c, a, dummy)();
+    log.error('Oh, god damn!', c, a, dummy)();
+    log.warn('Warn you about a warning!', c, a, dummy)();
+    log.success('Got it!', c, a, dummy)();
+    log.dark('Devil within, boo-ga-ga', c, a, dummy)();
+    log.light('Angel within', c, a, dummy)();
+    Llog.info('Lorem ipsum dolor... As trivially as this message', c, a, dummy)();
     
     // Log (uppercase) - is default log image, without configuration,  but with styles
-    Log.image('url to image')
+    Log.image('url/to/image')
     
     // log (lowercase) - is log, with configuration (height, width, background), and it's under developing
-    log.image('https://download.seaicons.com/download/i45781/tatice/cristal-intense/tatice-cristal-intense-apple-grey.ico')({
+    log.image('url/to/image')({
       background: 'green',
       height: 100, 
       width: 100
@@ -44,15 +43,19 @@ import { $Animations } from '@zhigamovsky/styled-console-log/gifs'
     Log.utils.getOSName({isShowInConsole: true});
     
     // Just for fun, log exist gif files
-    Log.gif($Animations.loader1);
-    Log.gif($Animations.loader2);
-    Log.gif($Animations.run);
+    Log.gif('url/to/gif');
     
     // You can override exist style for types (error, light, dark, info, success, warn, ...)
+    // #1 Strongly Recommended
     Log.overrideStyles($Types.dark, 'background: #353535;');
+    // but you also can use #2 
+    Log.overrideStyles('dark', 'background: #353535;');
     
     // You can override exist icons for types (error, light, dark, info, success, warn, ...)
-    Log.overrideIcons($Types.dark, '->')
+    // #1 Strongly Recommended
+    Log.overrideIcons($Types.error, '🦠')
+    // but you also can use #2 
+    Log.overrideIcons('error', '🦠')
     
     // Test your override styles and icons with 'error' type
     Log.error('Custom Error', dummy);
@@ -71,14 +74,18 @@ import { $Animations } from '@zhigamovsky/styled-console-log/gifs'
     Log.divided();
     
     // With parameters - Divider style can be one of types (include your own type)
+    // #1 Strongly Recommended
     Log.divided($Types.error);
     Log.divided($Types.warn);
     Log.divided($Types.success);
     Log.divided($Types.light);
     Log.divided($Types.dark);
+    // But you also can use 'dark', 'light', 'success', 'warn', 'error' etc..
     
     // Create your own template at once, and use anywhere with this package
+    // #1 Strongly Recommended
     Log.divided($Types.jolly);
+    // But you also can use 'jolly' :)
     
     // If Debug mode - all of console log are shown (by default - debug)
     Log.setEnvironmentDebug();
