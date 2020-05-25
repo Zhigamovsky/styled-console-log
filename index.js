@@ -1,4 +1,4 @@
-import { $Config, $Logger, $Types, $Utils, $Own } from "./config/constants";
+import { $Config, $Logger, $Types, $Utils, $Own, loadImage } from "./config/constants";
 
 const Log = {
   warn: (...args) => $Logger($Types.warn, null, ...args),
